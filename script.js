@@ -48,23 +48,18 @@ function showSuggestions(results, inputVal) {
 	suggestions.innerHTML = '';
 
 	for (const suggestion of list) {
-
-
 		const suggestionElement = document.createElement('div');
-
 		suggestionElement.textContent = suggestion;
 
 		suggestionElement.addEventListener('click', () => {
-			inputVal = suggestion;
+			input.value= suggestion;
 
 			suggestions.innerHTML = '';
 		});
 		suggestions.appendChild(suggestionElement);
 
-
-
 	}
-
+	useSuggestion(suggestions)
 
 }
 
