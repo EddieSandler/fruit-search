@@ -7,6 +7,7 @@ function search(str) {
 	let results = [];
 
 	// TODO
+
 	//filter array for elements that include the search term
 	let searchTerm = str.toLowerCase();
 
