@@ -7,26 +7,29 @@ function search(str) {
 	let results = [];
 
 	// TODO
-//filter array for elements that include the search term
+	//filter array for elements that include the search term
+	let searchTerm = str.toLowerCase();
 
-const searched=fruit.filter(el=>{
-	return el.toLowerCase().includes(str)
-})
+	const searched = fruit.filter(el => {
+		return el.toLowerCase().includes(searchTerm);
+	});
 
-results.push(searched)
+	results = [...searched];
 
-return showSuggestions(results,str)
-
+	showSuggestions(results, searchTerm);
 
 }
+
+
 
 function searchHandler(e) {
 	// TODO
 	//get inputted value
-	let searchTerm= input.value
+	let userInput = input.value;
 
-//search inputted value in fruit list
-	search(searchTerm)
+	//search inputted value in fruit list
+	search(userInput);
+
 
 }
 
@@ -36,28 +39,44 @@ function searchHandler(e) {
 function showSuggestions(results, inputVal) {
 
 	// TODO
-	// console.log(results,inputVal)
-// 	const suggestionElement = document.createElement('div')
-// for(let result of results){
-// 	suggestionElement.append(result)
-// 	suggestions.innerHTML=''
-// 	suggestions.append(suggestionElement)
 
-// }
-results.forEach((option) => {
-	const optionElement = document.createElement('option');
-	optionElement.textContent = option;
-	optionElement.value = option;
-	suggestions.appendChild(optionElement);
-});
+	let list = results.map(el => {
+		return el.toLowerCase();
+	});
+
+
+	suggestions.innerHTML = '';
+
+	for (const suggestion of list) {
+
+
+		const suggestionElement = document.createElement('div');
+
+		suggestionElement.textContent = suggestion;
+
+		suggestionElement.addEventListener('click', () => {
+			inputVal = suggestion;
+
+			suggestions.innerHTML = '';
+		});
+		suggestions.appendChild(suggestionElement);
+
+
+
+	}
 
 
 }
 
+
+
+
+
 function useSuggestion(e) {
 	// TODO
+	console.log(e.target);
 
-	console.log(suggestions)
+
 
 }
 
