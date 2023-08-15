@@ -39,6 +39,7 @@ input {
 }
 .search-container .suggestions {
    /* TODO */
+   position:absolute
 }
 
 ul {
@@ -51,7 +52,10 @@ ul.has-suggestions {
 ul li {
   /* TODO */
 }
-ul li:hover {
+div ul :hover {
+
+  background-color: #f0f0f0;
+  color: #333; 
   /* TODO */
 }
 
