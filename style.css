@@ -55,11 +55,15 @@ text-align:center;
 }
 .search-container .suggestions {
    /* TODO */
+<<<<<<< HEAD
 
    max-height: 200px;
    overflow-y: none;
    justify-content: left;
 
+=======
+   position:absolute
+>>>>>>> fb3959f44abe3b12fad6ca2786f3080a799d5155
 }
 
 ul {
@@ -81,7 +85,14 @@ ul li {
   margin-left:0
 
 }
+<<<<<<< HEAD
 option:hover {
+=======
+div ul :hover {
+
+  background-color: #f0f0f0;
+  color: #333; 
+>>>>>>> fb3959f44abe3b12fad6ca2786f3080a799d5155
   /* TODO */
   background-color: orange;
 }
