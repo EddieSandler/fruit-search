@@ -11,11 +11,11 @@ function search(str) {
 	//filter array for elements that include the search term
 	let searchTerm = str.toLowerCase();
 
-	const searched = fruit.filter(el => {
+	results = fruit.filter(el => {
 		return el.toLowerCase().includes(searchTerm);
 	});
 
-	results = [...searched];
+
 
 	showSuggestions(results, searchTerm);
 
@@ -29,7 +29,10 @@ function searchHandler(e) {
 	let userInput = input.value;
 
 	//search inputted value in fruit list
-	search(userInput);
+	if (userInput.length >= 3) {
+		search(userInput);
+
+	}
 
 
 }
@@ -41,31 +44,28 @@ function showSuggestions(results, inputVal) {
 
 	// TODO
 
-	let list = results.map(el => {
-		return el.toLowerCase();
-	});
+	// let list = results.map(el => {
+	// 	return el.toLowerCase();
+	// });
 
 
 	suggestions.innerHTML = '';
 
-	for (const suggestion of list) {
+	for (const suggestion of results) {
 		const suggestionElement = document.createElement('div');
 		suggestionElement.textContent = suggestion;
 
 		suggestionElement.addEventListener('click', () => {
-			input.value= suggestion;
+			input.value = suggestion;
 
 			suggestions.innerHTML = '';
 		});
 		suggestions.appendChild(suggestionElement);
 
 	}
-	useSuggestion(suggestions)
+	useSuggestion(suggestions);
 
 }
-
-
-
 
 
 function useSuggestion(e) {

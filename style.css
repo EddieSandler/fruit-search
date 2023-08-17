@@ -1,14 +1,16 @@
 * {
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
 }
 
 :focus {
  /* TODO */
+ background-color: #e05000;
 }
 
 body {
   /* TODO */
   margin:0;
+  padding:0;
   display:flex;
   justify-content: center;
   align-items: center;
@@ -18,44 +20,79 @@ body {
 
 input {
  /* TODO */
+ color:black;
+ font-weight:bold
+
 }
 
 .search-container {
  /* TODO */
- position:absolute;
- display:flex;
- flex-direction: column;
- align-items: center;
+margin:85px auto;
+width:250px;
+text-align:center;
+
 }
 .search-container input,
 .search-container .suggestions {
+  width:250PX;
+
+
   /* TODO */
 
 
 }
 .search-container input {
  /* TODO */
- position:absolute
+ width: 100%;
+
+  color: black;
+  font-weight: bold;
+  padding: 10px;
+  box-sizing: border-box;
+  border: none;
+
+
 }
 .search-container .suggestions {
    /* TODO */
+
+   max-height: 200px;
+   overflow-y: none;
+   justify-content: left;
+
 }
 
 ul {
   /* TODO */
-  padding-top: 20px;
+  margin:0;
+  padding:0;
+
+
 }
 ul.has-suggestions {
   /* TODO */
+  /* color: orange; */
+  padding:0;
+  text-align: left;
 }
 ul li {
   /* TODO */
+  padding:5px;
+  margin-left:0
+
 }
-ul li:hover {
+option:hover {
   /* TODO */
+  background-color: orange;
 }
 
 input {
    /* TODO */
+   color:black;
+
 
 }
+
+
+
+
