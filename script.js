@@ -29,33 +29,22 @@ function searchHandler(e) {
 	let userInput = input.value;
 
 	//search inputted value in fruit list
-	if (userInput.length >= 3) {
-		search(userInput);
 
-	}
-
+	search(userInput);
 
 }
 
 
-
-
 function showSuggestions(results, inputVal) {
 
-	// TODO
-
-	// let list = results.map(el => {
-	// 	return el.toLowerCase();
-	// });
 
 
 	suggestions.innerHTML = '';
 
 	for (const suggestion of results) {
-		const suggestionElement = document.createElement('div');
+		const suggestionElement = document.createElement('option');
 		suggestionElement.textContent = suggestion;
-
-		suggestionElement.addEventListener('click', () => {
+				suggestionElement.addEventListener('click', () => {
 			input.value = suggestion;
 
 			suggestions.innerHTML = '';
@@ -68,13 +57,14 @@ function showSuggestions(results, inputVal) {
 }
 
 
-function useSuggestion(e) {
-	// TODO
-	console.log(e.target);
+//didnt use this code
+// function useSuggestion(e) {
+// 	// TODO
+// 	console.log(e.target);
 
 
 
-}
+// }
 
 input.addEventListener('keyup', searchHandler);
 suggestions.addEventListener('click', useSuggestion);
