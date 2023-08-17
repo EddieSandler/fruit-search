@@ -6,7 +6,7 @@ const fruit = ['Apple', 'Apricot', 'Avocado 🥑', 'Banana', 'Bilberry', 'Blackb
 function search(str) {
 	let results = [];
 
-	// TODO
+
 
 	//filter array for elements that include the search term
 	let searchTerm = str.toLowerCase();
@@ -24,7 +24,7 @@ function search(str) {
 
 
 function searchHandler(e) {
-	// TODO
+
 	//get inputted value
 	let userInput = input.value;
 
@@ -39,32 +39,24 @@ function showSuggestions(results, inputVal) {
 
 
 
-	suggestions.innerHTML = '';
 
+
+	suggestions.innerHTML = '';
+	//dynamically create an option element for each  element in results
 	for (const suggestion of results) {
 		const suggestionElement = document.createElement('option');
 		suggestionElement.textContent = suggestion;
-				suggestionElement.addEventListener('click', () => {
-			input.value = suggestion;
+
+		//event handler for clicking on an option
+		suggestionElement.addEventListener('click', () => {
+			input.value = suggestion;// input box is populated with  clicked element
 
 			suggestions.innerHTML = '';
 		});
+		//adds suggestion to the DOM
 		suggestions.appendChild(suggestionElement);
 
 	}
-	useSuggestion(suggestions);
 
 }
-
-
-//didnt use this code
-// function useSuggestion(e) {
-// 	// TODO
-// 	console.log(e.target);
-
-
-
-// }
-
 input.addEventListener('keyup', searchHandler);
-suggestions.addEventListener('click', useSuggestion);
